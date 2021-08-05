@@ -51,6 +51,8 @@ define filebeat::input (
   Boolean $pure_array                      = false,
   String $host                             = 'localhost:9000',
   Optional[String] $max_message_size       = undef,
+  Optional[String] $index                  = undef,
+  Optional[Boolean] $keep_null             = undef,
 ) {
 
   $input_template = $filebeat::major_version ? {

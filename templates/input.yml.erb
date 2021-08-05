@@ -191,6 +191,9 @@
   <%- if @pipeline -%>
   pipeline: <%= @pipeline %>
   <%- end -%>
+  <%- if @index -%>
+  index: <%= @index %>
+  <%- end -%>
   <%- if @fields.length > 0 -%>
   fields:
     <%- @fields.each_pair do |k, v| -%>
@@ -207,5 +210,8 @@
   <%- if @processors.length > 0 -%>
   processors:
     <%- %><%= @processors.to_yaml.lines.drop(1).join.gsub(/^/, '  ') -%>
+  <%- end -%>
+  <%- if @keep_null -%>
+  keep_null: <%= @keep_null %>
   <%- end -%>
 <%- end %>
